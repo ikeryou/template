@@ -1,0 +1,37 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.9.11",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.10.0",
+    "cross-env": "^7.0.2",
+    "dat-gui": "^0.5.0",
+    "glsl-blend": "^1.0.3",
+    "glsl-noise": "0.0.0",
+    "glslify-loader": "^1.0.2",
+    "gsap": "^1.20.4",
+    "ismobilejs": "^0.4.0",
+    "jquery": "^3.0.0",
+    "json-loader": "^0.5.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.32",
+    "postcss-cli": "^7.1.2",
+    "raw-loader": "^0.5.1",
+    "stats-js": "^1.0.0-alpha1",
+    "stylus": "^0.54.5",
+    "stylus-reset": "0.0.1",
+    "three": "^0.113.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "start": "run-p css:dev autoprefixer js:dev",
+    "dist": "run-p css:dist autoprefixer js:dist",
+    "js:dev": "cross-env NODE_ENV=\"dev\" webpack",
+    "js:dist": "webpack",
+    "css:dev": "stylus -w src/css/ -o ./htdocs/assets/css/",
+    "css:dist": "stylus src/css/ -o ./htdocs/assets/css/",
+    "autoprefixer": "postcss ./htdocs/assets/css/bundle.css --use autoprefixer --replace"
+  }
+}

@@ -1,0 +1,54 @@
+
+
+// position ////////////////////
+m_pos($position = absolute, $top = 0px, $left = 0px, $bottom = auto, $right = auto)
+  position: $position
+  top: $top
+  left: $left
+  bottom: $bottom
+  right: $right
+
+// size ////////////////////
+m_size($w, $h)
+  width: $w
+  height: $h
+
+// size 100%
+m_size_full()
+  width: 100%
+  height: 100%
+
+// 中央配置 ////////////////////
+m_center()
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+// 背景画像 ////////////////////
+m_bg($src, $w, $h, $repeat = no-repeat)
+  background-repeat: $repeat
+  background-image: $src
+  background-size: $w $h
+  width: $w
+  height: $h
+
+// サイズ可変 ////////////////////
+m_vw($pt, $base = 1600)
+  (100 / $base) * $pt * 1vw
+
+m_vw2($pt, $base = 750)
+  (100 / $base) * $pt * 1vw
+
+// mq ////////////////////
+mq_pc()
+  @media screen and (min-width: $BREAKPOINT + 1)
+    {block}
+
+mq_sp()
+  @media screen and (max-width: $BREAKPOINT)
+    {block}
+
+// // ie11 only ////////////////////
+// ie11(selector)
+//   return _:-ms-lang(x)::-ms-backdrop, selector

@@ -1,0 +1,91 @@
+
+
+// ------------------------------------------------
+// ベース定義
+// ------------------------------------------------
+
+*
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+body, html
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+body
+  overflow: visible;
+  color: $COLOR_TEXT;
+  background: $COLOR_BG;
+  width: 100%;
+
+body.is-loaded
+  cursor: auto;
+
+a
+  color: inherit;
+  text-decoration: none;
+  user-select: none;
+
+svg
+  width: 100%
+  height: 100%
+  pointer-events: none;
+
+img, canvas, video
+  vertical-align: bottom
+  user-select: none;
+  display: block;
+
+img
+  width:100%;
+  max-width: 100%;
+  height: auto;
+
+main,article
+  display: block;
+
+@-ms-viewport
+  width: device-width;
+  initial-scale: 1;
+
+
+
+// ------------------------------------------------
+// 強制クラス
+// ------------------------------------------------
+
+.is-noClick
+  pointer-events: none !important;
+  & *
+    pointer-events: none !important;
+
+.is-none
+  display: none !important;
+
+.is-xs
+  display: none;
+  @media screen and (max-width:$BREAKPOINT)
+    display: block;
+
+.is-lg
+  display: block;
+  @media screen and (max-width:$BREAKPOINT)
+    display: none;
+
+
+
+// ------------------------------------------------
+// js用クラス
+// ------------------------------------------------
+
+.js-height
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+
+.js-smoothscroll
+  position: fixed;
